@@ -1,5 +1,5 @@
 echo "Please write the module name:"
-read "my_module"
+read module_name
 mkdir $module_name
 cd $module_name
 mkdir models controllers views security data demo i18n -p static/description
