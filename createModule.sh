@@ -25,4 +25,6 @@ echo "# -*- coding: utf-8 -*-" >> models/${module_name}.py
 echo "----------------------------------"
 echo "Module $module_name created"
 echo "----------------------------------"
+cd ..
 tree module_name
+
