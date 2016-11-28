@@ -63,23 +63,23 @@ echo "import models" >> __init__.py
 sudo touch models/__init__.py models/${name}.py
 sudo touch views/${name}.xml
 
-echo "{" >> __openerp__.py
-echo "    'name': $name" >> __openerp__.py
-echo "    'category': $category ," >> __openerp__.py
-echo "    'sequence': ," >> __openerp__.py
-echo "    'summary': $summary," >> __openerp__.py
-echo "    'website': $website," >> __openerp__.py
-echo "    'version': $version," >> __openerp__.py
-echo "    'description': $description," >> __openerp__.py
-echo "    'demo': ," >> __openerp__.py
-echo "    'depends': $depends," >> __openerp__.py
-echo "    'qweb': ," >> __openerp__.py
-echo "    'application': True," >> __openerp__.py
-echo "}" >> __openerp__.py
-echo "# -*- coding: utf-8 -*-" >> models/${name}.py
-echo "----------------------------------"
-echo "Module $name created"
-echo "----------------------------------"
+sudo echo "{" >> __openerp__.py
+sudo echo "    'name': $name" >> __openerp__.py
+sudo echo "    'category': $category ," >> __openerp__.py
+sudo echo "    'sequence': ," >> __openerp__.py
+sudo echo "    'summary': $summary," >> __openerp__.py
+sudo echo "    'website': $website," >> __openerp__.py
+sudo echo "    'version': $version," >> __openerp__.py
+sudo echo "    'description': $description," >> __openerp__.py
+sudo echo "    'demo': ," >> __openerp__.py
+sudo echo "    'depends': $depends," >> __openerp__.py
+sudo echo "    'qweb': ," >> __openerp__.py
+sudo echo "    'application': True," >> __openerp__.py
+sudo echo "}" >> __openerp__.py
+sudo echo "# -*- coding: utf-8 -*-" >> models/${name}.py
+sudo echo "----------------------------------"
+sudo echo "Module $name created"
+sudo echo "----------------------------------"
 cd ..
 tree $name
 
