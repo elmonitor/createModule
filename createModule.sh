@@ -39,19 +39,19 @@ fi
 
 echo "Create the folder  ?(y,n):"
 read answer
-if [ "$answer" == "y" -o "$answer" == "y" ]; then
+if [ "$answer" == "y" -o "$answer" == "Y" ]; then
   sudo mkdir
 fi
 
 echo "Create the folder  ?(y,n):"
 read answer
-if [ "$answer" == "y" -o "$answer" == "y" ]; then
+if [ "$answer" == "y" -o "$answer" == "Y" ]; then
   sudo mkdir
 fi
 
 echo "Create the folder  ?(y,n):"
 read answer
-if [ "$answer" == "y" -o "$answer" == "y" ]; then
+if [ "$answer" == "y" -o "$answer" == "Y" ]; then
   sudo mkdir
 fi
 
