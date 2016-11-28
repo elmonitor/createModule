@@ -29,7 +29,7 @@ read depends
 echo "Create the folder 'models'?(y,n):"
 read answer
 if [ "$answer" == "y" -o "$answer" == "Y" ]; then
-  sudo mkdir $name/models
+  sudo mkdir models
 fi
 echo "Create the folder 'views'?(y,n):"
 read answer
@@ -40,7 +40,7 @@ fi
 echo "Create the folder 'static/description'?(y,n):"
 read answer
 if [ "$answer" == "y" -o "$answer" == "Y" ]; then
-  sudo mkdir static/description
+  sudo mkdir static static/description
 fi
 
 echo "Create the folder 'i18n'?(y,n):"
@@ -55,7 +55,6 @@ fi
 #  sudo mkdir
 #fi
 
-sudo mkdir $name
 sudo touch __init__.py
 echo "# -*- coding: utf-8 -*-" >> __init__.py
 echo "# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)." >> __init__.py
