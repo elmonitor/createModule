@@ -31,78 +31,56 @@ read answer
 if [ "$answer" == "y" -o "$answer" == "Y" ]; then
   sudo mkdir $name/models
 fi
-echo "Create the folder views?(y,n):"
+echo "Create the folder 'views'?(y,n):"
 read answer
 if [ "$answer" == "y" -o "$answer" == "Y" ]; then
   sudo mkdir views
 fi
 
-echo "Create the folder  ?(y,n):"
+echo "Create the folder 'static/description'?(y,n):"
 read answer
 if [ "$answer" == "y" -o "$answer" == "Y" ]; then
-  sudo mkdir
+  sudo mkdir static/description
 fi
 
-echo "Create the folder  ?(y,n):"
+echo "Create the folder 'i18n'?(y,n):"
 read answer
 if [ "$answer" == "y" -o "$answer" == "Y" ]; then
-  sudo mkdir
+  sudo mkdir i18n
 fi
 
-echo "Create the folder  ?(y,n):"
-read answer
-if [ "$answer" == "y" -o "$answer" == "Y" ]; then
-  sudo mkdir
-fi
+#echo "Create the folder  ?(y,n):"
+#read answer
+#if [ "$answer" == "y" -o "$answer" == "Y" ]; then
+#  sudo mkdir
+#fi
 
-
-
-
-echo "Create the folder  ?(y,n):"
-read answer
-
-echo "Create the folder  ?(y,n):"
-read answer
-
-echo "Create the folder  ?(y,n):"
-read answer
-
-
-
-
-sudo mkdir $module_name
-cd $module_name
+sudo mkdir $name
 sudo touch __init__.py
 echo "# -*- coding: utf-8 -*-" >> __init__.py
 echo "# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)." >> __init__.py
 echo "import models" >> __init__.py
 
-sudo touch __openerp__.py
+sudo touch models/__init__.py models/${name}.py
+sudo touch views/${name}.xml
 
-
-sudo mkdir models views
-
-sudo touch models/__init__.py models/${module_name}.py
-sudo touch views/${module_name}.xml
-
-echo "import models" >> __init__.py
 echo "{" >> __openerp__.py
-echo "    'name': $module_name" >> __openerp__.py
-echo "    'category': ," >> __openerp__.py
+echo "    'name': $name" >> __openerp__.py
+echo "    'category': $category ," >> __openerp__.py
 echo "    'sequence': ," >> __openerp__.py
-echo "    'summary': ," >> __openerp__.py
-echo "    'website': ," >> __openerp__.py
-echo "    'version': ," >> __openerp__.py
-echo "    'description': ," >> __openerp__.py
+echo "    'summary': $summary," >> __openerp__.py
+echo "    'website': $website," >> __openerp__.py
+echo "    'version': $version," >> __openerp__.py
+echo "    'description': $description," >> __openerp__.py
 echo "    'demo': ," >> __openerp__.py
+echo "    'depends': $depends," >> __openerp__.py
 echo "    'qweb': ," >> __openerp__.py
 echo "    'application': True," >> __openerp__.py
 echo "}" >> __openerp__.py
-echo "# -*- coding: utf-8 -*-" >> models/__init__.py
-echo "# -*- coding: utf-8 -*-" >> models/${module_name}.py
+echo "# -*- coding: utf-8 -*-" >> models/${name}.py
 echo "----------------------------------"
-echo "Module $module_name created"
+echo "Module $name created"
 echo "----------------------------------"
 cd ..
-tree $module_name
+tree $name
 
