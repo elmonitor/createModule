@@ -61,8 +61,8 @@ echo "# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)." >> _
 echo "import models" >> __init__.py
 
 touch models/__init__.py models/${name}.py
+echo "import $name" >> models/__init__.py
 touch views/${name}.xml
-
 echo "{" >> __openerp__.py
 echo "    'name': $name" >> __openerp__.py
 echo "    'category': $category ," >> __openerp__.py
